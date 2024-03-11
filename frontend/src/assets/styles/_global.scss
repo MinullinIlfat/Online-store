@@ -1,0 +1,52 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.menu {
+  padding: 0;
+
+  ul {
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+    li {
+      list-style: none;
+      cursor: pointer;
+
+      a {
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: $base-black-color;
+        text-decoration: none;
+
+        &:active {
+          color: #709FDC;
+        }
+      }
+    }
+  }
+}
+
+.button {
+  background: #709FDC;
+  border-radius: 5px;
+  border: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
