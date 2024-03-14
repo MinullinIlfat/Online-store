@@ -90,8 +90,9 @@
           }
         }
       }
+
       .footer-rights {
-        font-family: Montserrat,sans-serif;
+        font-family: Montserrat, sans-serif;
         font-size: 16px;
         font-weight: 400;
         color: $base-blue-color;
@@ -128,7 +129,7 @@
     }
 
     .popup-title {
-      font-family: Lora,sans-serif;
+      font-family: Lora, sans-serif;
       font-size: 38px;
       font-weight: 400;
       line-height: 49px;
@@ -136,32 +137,17 @@
       margin-bottom: 20px;
     }
 
-    input {
-      width: 100%;
-      border: 2px solid #709FDC;
-      color: #A8ABA7;
-      padding: 20px 64px 20px 20px;
-      border-radius: 3px;
-      box-sizing: border-box;
-      outline: none;
-      font-family: Montserrat,sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-
-      &::placeholder {
-        color: #A8ABA7;
-      }
-
-      &.phone {
-        margin-top: 5px;
-        margin-bottom: 20px;
-      }
+    &.phone {
+      margin-top: 5px;
+      margin-bottom: 20px;
     }
-    .button {
-      display: inline-block;
-      width: 100%;
-      padding: 15px;
-      box-sizing: border-box;
-    }
+  }
+
+  .button {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-top: 15px;
   }
 }

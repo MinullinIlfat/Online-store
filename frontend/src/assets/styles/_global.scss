@@ -48,5 +48,29 @@ html, body {
   font-weight: 500;
   color: #FFFFFF;
   cursor: pointer;
+  padding: 15px;
+
+  &:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+}
+
+.input {
+  width: 100%;
+  border: 2px solid #709FDC;
+  color: black;
+  padding: 17px 20px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  outline: none;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+
+  &::placeholder {
+    color: #A8ABA7;
+  }
 }
 

@@ -1,0 +1,75 @@
+@import "variables";
+@import "fonts";
+
+.auth-form {
+  margin-bottom: 120px;
+  margin-top: 120px;
+
+  .auth-title {
+    margin-bottom: 40px;
+    font-family: Lora,sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: $base-blue-color;
+  }
+
+  .auth-inputs {
+    margin-bottom: 40px;
+
+    .auth-input {
+
+      input {
+
+      }
+    }
+
+    .auth-checkbox {
+      max-width: 422px;
+      display: flex;
+      align-items: baseline;
+      margin-top: 5px;
+
+      input {
+        margin: 0;
+      }
+
+      label {
+        font-family: Montserrat,sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        color: $base-black-color;
+        margin-left: 10px;
+
+        a {
+          color: $base-blue-color;
+        }
+      }
+    }
+  }
+  .auth-button {
+    margin-top: 40px;
+
+    button.button {
+      width: 100%;
+    }
+  }
+
+  .auth-link {
+    margin-top: 10px;
+    color: $base-black-color;
+    font-family: Montserrat,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+    a {
+      margin-left: 7px;
+      color: $base-blue-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.page-image {
+  margin-left: 185px;
+}
