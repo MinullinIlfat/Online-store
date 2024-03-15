@@ -41,10 +41,6 @@ export class AuthService {
     throw throwError(() => 'Can not find token');
   }
 
-  userInfo(accessToken:string):Observable<DefaultResponseType | UserInfoType> {
-    return this.http.get<DefaultResponseType | UserInfoType>(environment.api + 'users')
-  }
-
   public getIsLoggedIn() {
     return this.isLogged;
   }

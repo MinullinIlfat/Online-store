@@ -2,10 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../../core/auth/auth.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
-import {UserInfoType} from "../../../../types/user-info.type";
-import {DefaultResponseType} from "../../../../types/default-response.type";
-import {HttpErrorResponse} from "@angular/common/http";
-import {LoginResponseType} from "../../../../types/login-response.type";
 
 @Component({
   selector: 'app-header',
@@ -27,7 +23,6 @@ export class HeaderComponent implements OnInit {
     this.authService.isLogged$.subscribe((isLoggedIn: boolean) => {
       this.isLogged = isLoggedIn;
     })
-    this.userNameInfo();
   }
 
   logout(): void {
@@ -49,11 +44,4 @@ export class HeaderComponent implements OnInit {
     this._snackBar.open('Вы вышли из системы');
     this.router.navigate(['/']);
   }
-
-  userNameInfo() {
-    let token = this.authService.getTokens().accessToken
-    if (token)
-    this.authService.userInfo(token).subscribe()
-  }
-
 }
