@@ -1,0 +1,307 @@
+@import "../../../assets/styles/variables";
+
+.main {
+  margin-bottom: 120px;
+
+  .container {
+    position: relative;
+
+    .main-info {
+      padding-top: 100px;
+      padding-left: 65px;
+      padding-bottom: 88px;
+      background-image: url("/../../../assets/images/page/ellipse.png");
+      background-repeat: no-repeat;
+      height: 500px;
+      box-sizing: border-box;
+
+      .main-pre-title {
+        font-family: Montserrat, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        color: $base-blue-color;
+      }
+
+      .main-title {
+        font-family: Lora, sans-serif;
+        font-size: 50px;
+        font-weight: 400;
+        line-height: 65px;
+        color: #FFFFFF;
+        margin-bottom: 40px;
+        max-width: 610px;
+      }
+
+      .button {
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+
+    .main-image {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+      max-height: 500px;
+
+      img {
+        max-height: 500px;
+      }
+    }
+  }
+}
+
+.services {
+  margin-bottom: 120px;
+
+  .container {
+
+    .services-title {
+      font-family: Lora, sans-serif;
+      font-size: 38px;
+      font-weight: 400;
+      color: $base-blue-color;
+      margin-bottom: 40px;
+    }
+
+    .services-items {
+      display: flex;
+      justify-content: space-between;
+
+      .services-item {
+        max-width: 290px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .services-item-image {
+          width: 290px;
+          height: 291px;
+        }
+
+
+        .services-item-title {
+          font-family: Montserrat, sans-serif;
+          font-size: 20px;
+          font-weight: 500;
+          color: $base-blue-color;
+          margin-top: 15px;
+          margin-bottom: 10px;
+        }
+
+        .services-item-text {
+          font-family: Montserrat, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 18px;
+          color: $base-black-color;
+        }
+
+        .services-item-active {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 15px;
+
+          .services-item-active-price {
+            font-family: Montserrat, sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: $base-blue-color;
+          }
+
+          .button {
+            font-family: Montserrat, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+.advantages {
+  margin-bottom: 120px;
+
+  .container {
+    display: flex;
+
+    .advantages-image {
+      margin-right: 68px;
+    }
+
+    .advantages-info {
+
+      span {
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #1E1A2B;
+      }
+
+      .advantages-info-title {
+        font-family: Lora, sans-serif;
+        font-size: 38px;
+        font-weight: 400;
+        color: $base-blue-color;
+        margin-bottom: 20px;
+      }
+
+      .advantages-info-text {
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        margin-bottom: 40px;
+      }
+
+      .advantages-info-name {
+        font-family: Lora, sans-serif;
+        font-size: 26px;
+        font-weight: 400;
+        color: $base-blue-color;
+        margin-bottom: 20px;
+      }
+
+      .advantages-info-items {
+        display: grid;
+        grid-template-columns: 316px 316px;
+        column-gap: 71px;
+        row-gap: 20px;
+
+        .advantages-info-item {
+          display: flex;
+          align-items: center;
+          width: 316px;
+          height: 90px;
+
+          .advantages-info-item-number {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            min-height: 40px;
+            background-color: #B9D5FD;
+            border-radius: 50%;
+            margin-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            span {
+              font-family: Lora, sans-serif;
+              font-size: 50px;
+              font-weight: 500;
+              color: $base-blue-color;
+              margin-bottom: 15px;
+            }
+          }
+
+          .advantages-info-item-description {
+            font-family: Montserrat, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            color: #1E1A2B;
+          }
+        }
+      }
+    }
+  }
+}
+
+.articles {
+  margin-bottom: 120px;
+
+  .container {
+
+    .articles-title {
+      font-family: Lora, sans-serif;
+      font-size: 38px;
+      font-weight: 400;
+      color: $base-blue-color;
+      margin-bottom: 40px;
+    }
+
+    .articles-items {
+      display: flex;
+      justify-content: space-between;
+      max-width: 292px;
+
+      .articles-item {
+        position: relative;
+        margin-right: 24px;
+
+        .articles-item-name {
+          position: absolute;
+          top: 10px;
+          right: 9px;
+          width: 89px;
+          height: 34px;
+          font-family: Montserrat,sans-serif;
+          font-size: 11px;
+          font-weight: 400;
+          color: $base-blue-color;
+          border-radius: 5px;
+          background-color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .articles-item-image {
+          width: 290px;
+          height: 290px;
+          margin-bottom: 15px;
+        }
+
+        .articles-item-title {
+          font-family: Montserrat, sans-serif;
+          font-size: 20px;
+          font-weight: 500;
+          color: $base-blue-color;
+          margin-bottom: 20px;
+        }
+
+        .articles-item-text {
+          font-family: Montserrat, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 18px;
+          color: $base-black-color;
+          margin-bottom: 20px;
+          max-width: 286px;
+        }
+
+        .articles-item-active {
+          margin-bottom: 40px;
+
+          a {
+            font-family: Montserrat, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: $base-blue-color;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .articles-next {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      font-family: Montserrat, sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: $base-blue-color;
+      cursor: pointer;
+
+      svg {
+        margin-left: 14px;
+      }
+    }
+  }
+}

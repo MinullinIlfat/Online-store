@@ -43,12 +43,10 @@ html, body {
   background: #709FDC;
   border-radius: 5px;
   border: 0;
-  font-family: Montserrat, sans-serif;
-  font-size: 12px;
-  font-weight: 500;
+  padding: 15px 33px;
+  box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
-  padding: 15px;
 
   &:disabled {
     background-color: gray;
