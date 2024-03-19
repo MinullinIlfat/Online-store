@@ -6,6 +6,33 @@
   .container {
     position: relative;
 
+    .main-arrows {
+
+      .main-arrow-left {
+        position: absolute;
+        left: 10px;
+        top: 236px;
+        z-index: 10;
+        cursor: pointer;
+
+        svg {
+          fill: white;
+        }
+      }
+
+      .main-arrow-right {
+        position: absolute;
+        right: 10px;
+        top: 236px;
+        z-index: 10;
+        cursor: pointer;
+
+        svg {
+          fill: white;
+        }
+      }
+    }
+
     .main-info {
       padding-top: 100px;
       padding-left: 65px;
@@ -14,6 +41,7 @@
       background-repeat: no-repeat;
       height: 500px;
       box-sizing: border-box;
+
 
       .main-pre-title {
         font-family: Montserrat, sans-serif;
@@ -30,6 +58,21 @@
         color: #FFFFFF;
         margin-bottom: 40px;
         max-width: 610px;
+
+        span {
+          color: $base-blue-color;
+        }
+      }
+
+      .main-text {
+        font-family: Montserrat, sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 31px;
+        margin-bottom: 50px;
+        color: white;
+        max-width: 456px;
+        margin-top: -20px;
       }
 
       .button {
@@ -313,6 +356,7 @@
   margin-bottom: 120px;
 
   .container {
+    position: relative;
 
     .reviews-title {
       font-family: Lora, sans-serif;
@@ -322,38 +366,58 @@
       margin-bottom: 20px;
     }
 
-    .reviews-items {
-      display: flex;
+    .reviews-arrows {
+      .reviews-arrow-left {
+        position: absolute;
+        left: -25px;
+        bottom: 126px;
+        cursor: pointer;
+        z-index: 10;
+      }
 
-      .reviews-item {
-        border: 2px solid #709FDC;
-        border-radius: 5px;
-        padding: 30px;
-        width: 396px;
-        box-sizing: border-box;
-        margin-right: 25px;
+      .reviews-arrow-right {
+        position: absolute;
+        right: -25px;
+        bottom: 126px;
+        cursor: pointer;
+        z-index: 10;
+      }
+    }
 
-        .reviews-item-name {
-          display: flex;
-          align-items: center;
-          margin-bottom: 15px;
+    .reviews-item {
+      border: 2px solid #709FDC;
+      border-radius: 5px;
+      padding: 30px;
+      width: 396px;
+      height: 267px;
+      box-sizing: border-box;
+      margin-right: 25px;
 
-          span {
-            margin-left: 26px;
-            font-family: Montserrat, sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            color: $base-blue-color;
-          }
+      .reviews-item-name {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        img {
+          width: 60px;
+          height: 60px;
         }
 
-        .reviews-item-text {
+        span {
+          margin-left: 26px;
           font-family: Montserrat, sans-serif;
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 22px;
-          color: $base-black-color;
+          font-size: 18px;
+          font-weight: 600;
+          color: $base-blue-color;
         }
+      }
+
+      .reviews-item-text {
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        color: $base-black-color;
       }
     }
   }
@@ -363,15 +427,16 @@
   margin-bottom: 120px;
 
   .container {
+    display: flex;
 
     .connection-map {
-
+      margin-right: 26px;
     }
 
     .connection-contacts {
 
       .connection-contacts-title {
-        font-family: Lora,sans-serif;
+        font-family: Lora, sans-serif;
         font-size: 38px;
         font-weight: 400;
         color: $base-blue-color;
@@ -385,14 +450,15 @@
         }
 
         .connection-contacts-item-title {
-          font-family: Montserrat,sans-serif;
+          font-family: Montserrat, sans-serif;
           font-size: 20px;
           font-weight: 500;
           color: $base-blue-color;
           margin-bottom: 10px;
         }
+
         .connection-contacts-item-text {
-          font-family: Montserrat,sans-serif;
+          font-family: Montserrat, sans-serif;
           font-size: 14px;
           font-weight: 400;
           line-height: 18px;
@@ -410,5 +476,17 @@
         }
       }
     }
+  }
+}
+
+.popup-main {
+  display: block;
+
+  .hide-text {
+    margin-top: 5px;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: transparent;
   }
 }
