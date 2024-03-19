@@ -67,9 +67,14 @@
             line-height: 21px;
             color: $base-black-color;
 
-            svg {
+            a {
               margin-right: 12px;
               cursor: pointer;
+              text-decoration: none;
+              font-family: Montserrat,sans-serif;
+              font-size: 16px;
+              font-weight: 400;
+              color: $base-black-color;
 
               &:last-child {
                 margin-right: 0;

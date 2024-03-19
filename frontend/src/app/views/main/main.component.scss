@@ -272,67 +272,6 @@
       display: flex;
       justify-content: space-between;
       max-width: 292px;
-
-      .articles-item {
-        position: relative;
-        margin-right: 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .articles-item-name {
-          position: absolute;
-          top: 10px;
-          right: 9px;
-          width: 89px;
-          height: 34px;
-          font-family: Montserrat, sans-serif;
-          font-size: 11px;
-          font-weight: 400;
-          color: $base-blue-color;
-          border-radius: 5px;
-          background-color: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .articles-item-image {
-          width: 290px;
-          height: 290px;
-          margin-bottom: 15px;
-        }
-
-        .articles-item-title {
-          font-family: Montserrat, sans-serif;
-          font-size: 20px;
-          font-weight: 500;
-          color: $base-blue-color;
-          margin-bottom: 20px;
-        }
-
-        .articles-item-text {
-          font-family: Montserrat, sans-serif;
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 18px;
-          color: $base-black-color;
-          margin-bottom: 20px;
-          max-width: 286px;
-        }
-
-        .articles-item-active {
-          margin-bottom: 40px;
-
-          a {
-            font-family: Montserrat, sans-serif;
-            font-size: 16px;
-            font-weight: 400;
-            color: $base-blue-color;
-            cursor: pointer;
-          }
-        }
-      }
     }
 
     .articles-next {
@@ -344,6 +283,7 @@
       font-weight: 500;
       color: $base-blue-color;
       cursor: pointer;
+      text-decoration: none;
 
       svg {
         margin-left: 14px;
@@ -465,9 +405,14 @@
           color: $base-black-color;
           max-width: 501px;
 
-          svg {
+          a {
             margin-right: 20px;
             cursor: pointer;
+            text-decoration: none;
+            font-family: Montserrat,sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: $base-black-color;
 
             &:last-child {
               margin-right: 0;
@@ -480,13 +425,13 @@
 }
 
 .popup-main {
-  display: block;
 
   .hide-text {
     margin-top: 5px;
     font-family: Montserrat, sans-serif;
     font-size: 14px;
     font-weight: 400;
-    color: transparent;
+    color: red;
+    //color: transparent;
   }
 }

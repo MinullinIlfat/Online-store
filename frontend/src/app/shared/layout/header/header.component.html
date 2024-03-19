@@ -2,7 +2,9 @@
   <div class="container">
     <div class="header-content">
       <div class="logo">
-        <img src="/assets/images/Logotype.png" alt="Logo">
+        <a [routerLink]="'/'">
+          <img src="/assets/images/Logotype.png" alt="Logo">
+        </a>
       </div>
       <nav class="menu">
         <ul>
@@ -13,7 +15,7 @@
             <a>О нас</a>
           </li>
           <li>
-            <a>Статьи</a>
+            <a [routerLink]="'/blog'">Статьи</a>
           </li>
           <li>
             <a>Отзывы</a>
