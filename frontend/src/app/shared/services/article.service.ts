@@ -16,4 +16,8 @@ export class ArticleService {
   getPopularArticles():Observable<ArticleType[]> {
     return this.http.get<ArticleType[]>(environment.api + 'articles/top');
   }
+
+  getArticles():Observable<{count: number, pages: number, items: ArticleType[]}> {
+    return this.http.get<{count: number, pages: number, items: ArticleType[]}>(environment.api + 'articles');
+  }
 }
