@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ArticleType} from "../../../types/article.type";
 import {environment} from "../../../environments/environment";
+import {CategoryType} from "../../../types/category.type";
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,8 @@ export class ArticleService {
 
   getArticles():Observable<{count: number, pages: number, items: ArticleType[]}> {
     return this.http.get<{count: number, pages: number, items: ArticleType[]}>(environment.api + 'articles');
+  }
+  getCategories():Observable<CategoryType[]> {
+    return this.http.get<CategoryType[]>(environment.api + 'categories');
   }
 }

@@ -13,8 +13,8 @@
           </g>
         </svg>
       </div>
-      <div class="blog-head-filter open">
-        <div class="blog-head-filter-main">
+      <div class="blog-head-filter" [class.open]="open">
+        <div class="blog-head-filter-main" (click)="toggle()">
           <span>Фильтр</span>
           <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -23,26 +23,11 @@
           </svg>
         </div>
         <div class="blog-head-filter-body">
-          <div class="blog-head-filter-body-item">
-            <span>Фриланс</span>
+          <label class="blog-head-filter-body-item" *ngFor="let category of categories">
+            <input type="checkbox" #input (change)="updateFilterParams(category.url, input.checked)">
+            <span>{{category.name}}</span>
             <span>+</span>
-          </div>
-          <div class="blog-head-filter-body-item active">
-            <span>Дизайн</span>
-            <span>-</span>
-          </div>
-          <div class="blog-head-filter-body-item">
-            <span>SMM</span>
-            <span>+</span>
-          </div>
-          <div class="blog-head-filter-body-item">
-            <span>Таргет</span>
-            <span>+</span>
-          </div>
-          <div class="blog-head-filter-body-item">
-            <span>Копирайтинг</span>
-            <span>+</span>
-          </div>
+          </label>
         </div>
       </div>
     </div>
@@ -52,7 +37,7 @@
     <div class="blog-pagination">
       <div class="blog-pagination-arrow">
         <img src="assets/images/page/previous-pagination-disabled.png" alt="Arrow">
-<!--        <img src="assets/images/page/previous-pagination.png" alt="Arrow">-->
+        <!--        <img src="assets/images/page/previous-pagination.png" alt="Arrow">-->
       </div>
       <div class="blog-pagination-pages">
         <a class="blog-pagination-page active">1</a>
@@ -62,7 +47,7 @@
         <a class="blog-pagination-page">5</a>
       </div>
       <div class="blog-pagination-arrow">
-<!--        <img src="assets/images/page/next-pagination-disabled.png" alt="Arrow">-->
+        <!--        <img src="assets/images/page/next-pagination-disabled.png" alt="Arrow">-->
         <img src="assets/images/page/next-pagination.png" alt="Arrow">
       </div>
     </div>

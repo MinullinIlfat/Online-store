@@ -40,7 +40,6 @@
       }
 
       .blog-head-filter {
-        width: 257px;
         box-sizing: border-box;
         position: relative;
         font-family: Montserrat,sans-serif;
@@ -49,11 +48,17 @@
         color: $base-black-color;
 
         .blog-head-filter-main {
+          width: 148px;
           display: flex;
           align-items: center;
           cursor: pointer;
           padding: 12px 0 12px 23px;
           justify-content: space-between;
+          transition: all 0.5s ease-in-out;;
+
+          svg {
+            transition: all 0.5s ease-in-out;;
+          }
         }
 
         .blog-head-filter-body {
@@ -87,11 +92,14 @@
 
         &.open {
           .blog-head-filter-main {
+            width: 257px;
             background-color: #B9D5FD;
             border-radius: 5px 5px 0 0;
             padding-right: 23px;
+            transition: all 0.5s ease-in-out;;
 
             svg {
+              transition: all 0.5s ease-in-out;;
               transform: rotate(180deg);
             }
           }
