@@ -3,6 +3,7 @@ import {ArticleService} from "../../../shared/services/article.service";
 import {ArticleType} from "../../../../types/article.type";
 import {CategoryType} from "../../../../types/category.type";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ActiveParamCategoryType} from "../../../../types/active-param-category.type";
 
 @Component({
   selector: 'app-blog',
@@ -14,7 +15,7 @@ export class BlogComponent implements OnInit {
   articles: ArticleType[] = [];
   categories: CategoryType[] = [];
   open = false;
-  activeParams: CategoryType[] = [];
+  activeParams: ActiveParamCategoryType[] = [];
   pages: number[] = [];
 
   constructor(private articleService: ArticleService,
