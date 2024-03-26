@@ -80,6 +80,10 @@
             cursor: pointer;
             color: #BEBEBE;
 
+            input {
+              display: none;
+            }
+
             &:last-child {
               margin-bottom: 0;
             }
@@ -91,6 +95,7 @@
         }
 
         &.open {
+
           .blog-head-filter-main {
             width: 257px;
             background-color: #B9D5FD;
@@ -105,6 +110,7 @@
           }
           .blog-head-filter-body {
             display: block;
+
           }
         }
       }

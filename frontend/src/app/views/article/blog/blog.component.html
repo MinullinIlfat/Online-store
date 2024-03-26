@@ -23,10 +23,13 @@
           </svg>
         </div>
         <div class="blog-head-filter-body">
-          <label class="blog-head-filter-body-item" *ngFor="let category of categories">
-            <input type="checkbox" #input (change)="updateFilterParams(category.url, input.checked)">
+          <label class="blog-head-filter-body-item"
+                 *ngFor="let category of categories">
+            <input type="checkbox" #input
+                   (change)="updateFilterParams(category.url, input.checked)">
             <span>{{category.name}}</span>
-            <span>+</span>
+            <span *ngIf="!input.checked">+</span>
+            <span *ngIf="input.checked">-</span>
           </label>
         </div>
       </div>
@@ -34,17 +37,14 @@
     <div class="blog-articles">
       <article-card *ngFor="let article of articles" [article]="article"></article-card>
     </div>
-    <div class="blog-pagination">
+    <div class="blog-pagination" *ngIf="pages.length > 1">
       <div class="blog-pagination-arrow">
         <img src="assets/images/page/previous-pagination-disabled.png" alt="Arrow">
         <!--        <img src="assets/images/page/previous-pagination.png" alt="Arrow">-->
       </div>
       <div class="blog-pagination-pages">
-        <a class="blog-pagination-page active">1</a>
-        <a class="blog-pagination-page">2</a>
-        <a class="blog-pagination-page">3</a>
-        <a class="blog-pagination-page">4</a>
-        <a class="blog-pagination-page">5</a>
+        <a class="blog-pagination-page"
+           *ngFor="let page of pages">{{page}}</a>
       </div>
       <div class="blog-pagination-arrow">
         <!--        <img src="assets/images/page/next-pagination-disabled.png" alt="Arrow">-->

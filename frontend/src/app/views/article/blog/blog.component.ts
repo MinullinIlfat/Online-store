@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ArticleService} from "../../../shared/services/article.service";
 import {ArticleType} from "../../../../types/article.type";
 import {CategoryType} from "../../../../types/category.type";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-blog',
@@ -15,6 +15,7 @@ export class BlogComponent implements OnInit {
   categories: CategoryType[] = [];
   open = false;
   activeParams: CategoryType[] = [];
+  pages: number[] = [];
 
   constructor(private articleService: ArticleService,
               private router: Router) { }
@@ -22,12 +23,18 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     this.articleService.getArticles()
       .subscribe( data => {
+        this.pages = [];
+        for (let i = 1; i <= data.pages; i++) {
+          this.pages.push(i)
+        }
         this.articles = data.items
       })
+
     this.articleService.getCategories()
       .subscribe(data => {
         this.categories = data;
       })
+
   }
 
   toggle() {
@@ -36,9 +43,9 @@ export class BlogComponent implements OnInit {
 
   updateFilterParams(url: any, checked: boolean) {
     if (this.activeParams && this.activeParams.length > 0) {
-      const existingCategoryInParams = this.activeParams.find(item => item.url === url);
+      const existingCategoryInParams = this.activeParams.find(item => item === url);
       if (existingCategoryInParams && !checked) {
-        this.activeParams = this.activeParams.filter(item => item.url !== url);
+        this.activeParams = this.activeParams.filter(item => item !== url);
       } else if (!existingCategoryInParams && checked) {
         this.activeParams.push(url);
       }
