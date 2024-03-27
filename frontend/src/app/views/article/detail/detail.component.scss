@@ -1,0 +1,144 @@
+@import "../../../../assets/styles/variables";
+
+.detail {
+  padding: 80px 0 120px 0;
+
+  .container {
+
+    .detail-pre-title {
+      font-family: Montserrat, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: $base-blue-color;
+      margin-bottom: 60px;
+
+      span {
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #B9D5FD;
+      }
+    }
+
+    .detail-main {
+      display: flex;
+      margin-bottom: 60px;
+      justify-content: space-between;
+
+      .detail-main-info {
+        color: $base-blue-color;
+        max-width: 607px;
+
+        .detail-main-info-title {
+          font-family: Lora, sans-serif;
+          font-size: 38px;
+          font-weight: 400;
+          margin-bottom: 40px;
+        }
+
+        .detail-main-info-description {
+          font-family: Montserrat, sans-serif;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 26px;
+        }
+      }
+
+      .detail-main-image {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 527px;
+        height: 320px;
+      }
+    }
+
+    .detail-info {
+      display: flex;
+      justify-content: space-between;
+
+      .detail-info-description {
+        max-width: 818px;
+
+        .detail-info-description-share {
+          margin-bottom: 60px;
+          font-family: Montserrat,sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          color: $base-blue-color;
+          display: flex;
+          align-items: center;
+
+          span {
+            margin-right: 20px;
+          }
+
+          a {
+            margin-right: 13px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+
+        .detail-info-description-comments {
+          margin-bottom: 60px;
+          display: flex;
+          flex-direction: column;
+
+          .detail-info-description-comments-title {
+            font-family: Lora,sans-serif;
+            font-size: 38px;
+            font-weight: 400;
+            color: $base-blue-color;
+            margin-bottom: 40px;
+          }
+
+          .detail-info-description-comment {
+
+            .auth {
+              font-family: Montserrat,sans-serif;
+              font-size: 14px;
+              font-weight: 400;
+              color: $base-black-color;
+
+              a {
+                text-decoration: none;
+                font-family: Montserrat,sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                color: $base-blue-color;
+              }
+            }
+
+            .first {
+              font-family: Montserrat,sans-serif;
+              font-size: 14px;
+              font-weight: 400;
+              color: $base-black-color;
+              margin-bottom: 40px;
+            }
+
+            .button {
+              margin-top: 20px;
+              width: 422px;
+            }
+          }
+        }
+      }
+
+      .detail-info-read {
+        margin-top: 60px;
+
+        .detail-info-read-title {
+          font-family: Lora, sans-serif;
+          font-size: 26px;
+          font-weight: 400;
+          color: $base-blue-color;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

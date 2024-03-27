@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ArticleService} from "../../../shared/services/article.service";
-import {ArticleType} from "../../../../types/article.type";
+import {ArticlesType} from "../../../../types/articles.type";
 import {CategoryType} from "../../../../types/category.type";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ActiveParamCategoryType} from "../../../../types/active-param-category.type";
@@ -12,14 +12,19 @@ import {ActiveParamCategoryType} from "../../../../types/active-param-category.t
 })
 export class BlogComponent implements OnInit {
 
-  articles: ArticleType[] = [];
+  articles: ArticlesType[] = [];
   categories: CategoryType[] = [];
   open = false;
   activeParams: ActiveParamCategoryType[] = [];
   pages: number[] = [];
+  appliedFilters: {
+    name: string,
+    url: string
+  }[] = [];
 
   constructor(private articleService: ArticleService,
-              private router: Router) { }
+              private router: Router,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.articleService.getArticles()
@@ -57,5 +62,9 @@ export class BlogComponent implements OnInit {
     this.router.navigate(['/blog'], {
       queryParams: this.activeParams
     });
+  }
+
+  removeAppliedFilter() {
+
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
 import {ArticleService} from "../../shared/services/article.service";
-import {ArticleType} from "../../../types/article.type";
+import {ArticlesType} from "../../../types/articles.type";
 import {PopupService} from "../../shared/services/popup.service";
 import {FormBuilder, Validators} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -62,7 +62,7 @@ export class MainComponent implements OnInit {
     service: ['', [Validators.required]],
   });
 
-  articles: ArticleType[] = [];
+  articles: ArticlesType[] = [];
   popup: boolean = false;
   successPopup: boolean = false;
   firstPopup: boolean = false;
@@ -77,7 +77,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     this.articleService.getPopularArticles()
-      .subscribe((data: ArticleType[]) => {
+      .subscribe((data: ArticlesType[]) => {
         this.articles = data
       })
   }

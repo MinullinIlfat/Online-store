@@ -1,7 +1,4 @@
-export type ArticleType = {
-  text: string,
-  comments: [],
-  commentsCount: number,
+export type ArticlesType = {
   id: string,
   title: string,
   description: string,

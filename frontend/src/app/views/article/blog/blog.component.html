@@ -4,14 +4,16 @@
       Блог
     </div>
     <div class="blog-head">
-      <div class="blog-head-checked">
-        <span>Дизайн</span>
-        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_8451_586)">
-            <line x1="1.93553" y1="3.15002" x2="13.9563" y2="15.1708" stroke="#709FDC" stroke-linecap="round"/>
-            <line x1="13.9236" y1="3.12984" x2="1.90278" y2="15.1507" stroke="#709FDC" stroke-linecap="round"/>
-          </g>
-        </svg>
+      <div class="blog-head-checked" *ngFor="let activeParam of activeParams">
+        <span>{{activeParam}}</span>
+        <a (click)="removeAppliedFilter()">
+          <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_8451_586)">
+              <line x1="1.93553" y1="3.15002" x2="13.9563" y2="15.1708" stroke="#709FDC" stroke-linecap="round"/>
+              <line x1="13.9236" y1="3.12984" x2="1.90278" y2="15.1507" stroke="#709FDC" stroke-linecap="round"/>
+            </g>
+          </svg>
+        </a>
       </div>
       <div class="blog-head-filter" [class.open]="open">
         <div class="blog-head-filter-main" (click)="toggle()">
@@ -24,6 +26,7 @@
         </div>
         <div class="blog-head-filter-body">
           <label class="blog-head-filter-body-item"
+                 [class.active]="input.checked"
                  *ngFor="let category of categories">
             <input type="checkbox" #input
                    (change)="updateFilterParams(category.url, input.checked)">

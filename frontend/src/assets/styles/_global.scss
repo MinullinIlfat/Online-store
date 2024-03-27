@@ -136,8 +136,46 @@ html, body {
     width: 100%;
     padding: 15px;
     margin-top: 15px;
-    font-family: Montserrat,sans-serif;
+    font-family: Montserrat, sans-serif;
     font-size: 12px;
     font-weight: 500;
+  }
+}
+
+.detail-info-description-content h1 {
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: $base-blue-color;
+  margin-top: 40px;
+}
+
+.detail-info-description-content h3 {
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: $base-blue-color;
+  margin-top: 40px;
+}
+
+.detail-info-description-content b {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+  color: $base-black-color;
+}
+
+.detail-info-description-content p {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: $base-black-color;
+  margin-bottom: 20px;
+  margin-top: 0;
+
+  &:last-child {
+    margin-bottom: 60px;
   }
 }
