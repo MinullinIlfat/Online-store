@@ -121,6 +121,13 @@
               margin-bottom: 40px;
             }
 
+            .textarea {
+              border: 2px solid $base-blue-color;
+              max-width: 818px;
+              max-height: 248px;
+              outline: none;
+            }
+
             .button {
               margin-top: 20px;
               width: 422px;
@@ -128,7 +135,7 @@
           }
 
           .detail-info-description-comment {
-            margin-bottom: 40px;
+
 
             .detail-info-description-comment-item {
               margin-bottom: 40px;
@@ -206,6 +213,21 @@
                 }
               }
             }
+          }
+        }
+
+        .detail-info-description-more {
+          display: flex;
+          align-items: center;
+          margin-top: 40px;
+          cursor: pointer;
+
+          span {
+            font-family: Montserrat,sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: $base-blue-color;
+            margin-right: 10px;
           }
         }
       }

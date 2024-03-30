@@ -41,7 +41,7 @@
             stroke="#071739" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <a routerLink="/login" *ngIf="!isLogged">Войти</a>
-        <a *ngIf="isLogged" [matMenuTriggerFor]="menu">Привет, {{userName}}!</a>
+        <a *ngIf="isLogged" [matMenuTriggerFor]="menu">Привет,!</a>
         <mat-menu #menu="matMenu">
           <button mat-menu-item>
             <span (click)="logout()">Выйти</span>

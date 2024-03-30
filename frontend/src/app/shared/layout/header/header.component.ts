@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../../core/auth/auth.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
+import {UserInfoType} from "../../../../types/user-info.type";
+import {DefaultResponseType} from "../../../../types/default-response.type";
 
 @Component({
   selector: 'app-header',
@@ -11,7 +13,7 @@ import {Router} from "@angular/router";
 export class HeaderComponent implements OnInit {
 
   isLogged: boolean = false;
-  userName: string | null = null;
+  userInfo!: UserInfoType;
 
   constructor(private authService: AuthService,
               private _snackBar: MatSnackBar,
@@ -20,9 +22,16 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const tokens = this.authService.getTokens();
+    const authToken = tokens.accessToken
     this.authService.isLogged$.subscribe((isLoggedIn: boolean) => {
       this.isLogged = isLoggedIn;
     })
+
+    // this.authService.getUserInfo(authToken)
+    //   .subscribe({
+    //
+    //   })
   }
 
   logout(): void {

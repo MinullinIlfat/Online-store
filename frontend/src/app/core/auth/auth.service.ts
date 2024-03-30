@@ -4,6 +4,8 @@ import {DefaultResponseType} from "../../../types/default-response.type";
 import {LoginResponseType} from "../../../types/login-response.type";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
+import {ArticlesType} from "../../../types/articles.type";
+import {UserInfoType} from "../../../types/user-info.type";
 
 @Injectable({
   providedIn: 'root'
@@ -62,6 +64,10 @@ export class AuthService {
       accessToken: localStorage.getItem(this.accessTokenKey),
       refreshToken: localStorage.getItem(this.refreshTokenKey),
     }
+  }
+
+  getUserInfo(accessToken: string | null): Observable<UserInfoType | DefaultResponseType> {
+    return this.http.get<UserInfoType | DefaultResponseType>(environment.api + 'users');
   }
 
   get userId(): null | string {
