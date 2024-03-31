@@ -19,6 +19,7 @@ export class DetailComponent implements OnInit {
   relatedArticles: ArticlesType[] = [];
   isLogged: boolean = false;
   comments: CommentsType[] = [];
+  commentsCount: number | null = null;
 
   constructor(private activatedRoute: ActivatedRoute,
               private articleService: ArticleService,
@@ -34,8 +35,9 @@ export class DetailComponent implements OnInit {
           this.article = data;
           if (this.article.id) {
             this.commentService.getComments(this.article.id)
-              .subscribe((data: CommentsType[]) => {
-                console.log(data)
+              .subscribe((data) => {
+                this.comments = data.comments;
+                this.commentsCount = data.allCount;
               })
           }
         })
@@ -47,7 +49,5 @@ export class DetailComponent implements OnInit {
           this.relatedArticles = data;
         })
     })
-
-
   }
 }

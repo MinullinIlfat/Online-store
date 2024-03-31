@@ -5,6 +5,7 @@ import {ArticlesType} from "../../../types/articles.type";
 import {environment} from "../../../environments/environment";
 import {CategoryType} from "../../../types/category.type";
 import {ArticleType} from "../../../types/article.type";
+import {ActivateParamsType} from "../../../types/activate-params.type";
 
 @Injectable({
   providedIn: 'root'

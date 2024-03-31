@@ -1,6 +1,4 @@
 export type CommentsType = {
-  allCount: 5,
-  comments:[
     id: string,
     text: string,
     date: string,
@@ -10,5 +8,4 @@ export type CommentsType = {
       id: string,
       name: string
     }
-  ]
 }

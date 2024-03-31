@@ -4,16 +4,18 @@ import {ArticleCardComponent} from "./components/article-card/article-card.compo
 import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
+import { CharacterPipe } from './pipes/character.pipe';
+
 
 
 
 @NgModule({
-  declarations: [ArticleCardComponent],
+  declarations: [ArticleCardComponent, CharacterPipe],
   imports: [
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [ArticleCardComponent]
 })

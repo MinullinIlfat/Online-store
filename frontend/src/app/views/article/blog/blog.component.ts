@@ -3,7 +3,7 @@ import {ArticleService} from "../../../shared/services/article.service";
 import {ArticlesType} from "../../../../types/articles.type";
 import {CategoryType} from "../../../../types/category.type";
 import {ActivatedRoute, Router} from "@angular/router";
-import {ActiveParamCategoryType} from "../../../../types/active-param-category.type";
+import {ActivateParamsType} from "../../../../types/activate-params.type";
 
 @Component({
   selector: 'app-blog',
@@ -15,7 +15,7 @@ export class BlogComponent implements OnInit {
   articles: ArticlesType[] = [];
   categories: CategoryType[] = [];
   open = false;
-  activeParams: ActiveParamCategoryType[] = [];
+  activeParams: ActivateParamsType[] = [];
   pages: number[] = [];
   appliedFilters: {
     name: string,

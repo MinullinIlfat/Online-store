@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './shared/layout/layout.component';
@@ -37,6 +36,7 @@ import {ReactiveFormsModule} from "@angular/forms";
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
   ],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
