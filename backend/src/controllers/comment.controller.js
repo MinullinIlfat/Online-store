@@ -36,7 +36,7 @@ class CommentController {
         }
 
         const offset = req.query['offset'] || 3;
-        const loadCount = 10;
+        const loadCount = 25;
 
         let comments = await CommentModel.find({article: article})
             .populate('user')

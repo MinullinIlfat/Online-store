@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
 import {ArticleService} from "../../shared/services/article.service";
 import {ArticlesType} from "../../../types/articles.type";
@@ -60,24 +60,28 @@ export class MainComponent implements OnInit {
 
   serviceItems = [
     {
+      id: 1,
       image: 'assets/images/page/service1.png',
       title: 'Создание сайтов',
       text: 'В краткие сроки мы создадим качественный и самое главное продающий сайт для продвижения Вашего бизнеса!',
       price: 'От 7 500₽',
     },
     {
+      id: 2,
       image: 'assets/images/page/service2.png',
       title: 'Продвижение',
       text: 'Вам нужен качественный SMM-специалист или грамотный таргетолог? Мы готовы оказать Вам услугу “Продвижения” на наивысшем уровне!',
       price: 'От 3 500₽',
     },
     {
+      id: 3,
       image: 'assets/images/page/service3.png',
       title: 'Реклама',
       text: 'Без рекламы не может обойтись ни один бизнес или специалист. Обращаясь к нам, мы гарантируем быстрый прирост клиентов за счёт правильно настроенной рекламы.',
       price: 'От 1 000₽',
     },
     {
+      id: 4,
       image: 'assets/images/page/service4.png',
       title: 'Копирайтинг',
       text: 'Наши копирайтеры готовы написать Вам любые продающие текста, которые не только обеспечат рост охватов, но и помогут выйти на новый уровень в продажах.',
@@ -95,7 +99,7 @@ export class MainComponent implements OnInit {
   popup: boolean = false;
   successPopup: boolean = false;
   firstPopup: boolean = false;
-  errorText:boolean = false;
+  errorText: boolean = false;
 
   constructor(private articleService: ArticleService,
               private popupService: PopupService,
@@ -111,7 +115,7 @@ export class MainComponent implements OnInit {
       })
   }
 
-  popupShow() {
+  popupShow(id: number) {
     this.popup = true;
     this.firstPopup = true;
   }
@@ -126,7 +130,7 @@ export class MainComponent implements OnInit {
     if (this.popupForm.valid && this.popupForm.value.phone
       && this.popupForm.value.name && this.popupForm.value.service) {
       this.popupService.mainRequest(this.popupForm.value.name, this.popupForm.value.phone, 'order', this.popupForm.value.service)
-        .subscribe( {
+        .subscribe({
           next: (data: DefaultResponseType) => {
             this.firstPopup = false;
             this.successPopup = true;
@@ -142,7 +146,6 @@ export class MainComponent implements OnInit {
         })
     }
   }
-
 
 
 }

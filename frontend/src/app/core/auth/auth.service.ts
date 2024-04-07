@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable, Subject, throwError} from "rxjs";
 import {DefaultResponseType} from "../../../types/default-response.type";
 import {LoginResponseType} from "../../../types/login-response.type";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 import {ArticlesType} from "../../../types/articles.type";
 import {UserInfoType} from "../../../types/user-info.type";
@@ -66,8 +66,13 @@ export class AuthService {
     }
   }
 
-  getUserInfo(accessToken: string | null): Observable<UserInfoType | DefaultResponseType> {
-    return this.http.get<UserInfoType | DefaultResponseType>(environment.api + 'users');
+  getUserInfo(): Observable<UserInfoType> {
+    let token: string = this.getTokens().accessToken as string;
+    let headers: HttpHeaders = new HttpHeaders();
+    if (token) {
+      headers = headers.set('x-auth', token);
+    }
+    return this.http.get<UserInfoType>(environment.api + 'users', {headers: headers});
   }
 
   get userId(): null | string {

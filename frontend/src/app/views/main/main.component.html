@@ -30,7 +30,7 @@
           <div class="main-title">
             Продвижение в Instagram для вашего бизнеса <span>-15%</span>!
           </div>
-          <button class="button" (click)="popupShow()">
+          <button class="button" (click)="popupShow(1)">
             Подробнее
           </button>
         </div>
@@ -49,7 +49,7 @@
           <div class="main-text">
             Весь декабрь у нас действует акция на работу копирайтера.
           </div>
-          <button class="button" (click)="popupShow()">
+          <button class="button" (click)="popupShow(1)">
             Подробнее
           </button>
         </div>
@@ -69,7 +69,7 @@
           <div class="main-text">
             Мы благодарим каждого, кто голосовал за нас!
           </div>
-          <button class="button" (click)="popupShow()">
+          <button class="button" (click)="popupShow(1)">
             Подробнее
           </button>
         </div>
@@ -88,7 +88,7 @@
       Услуги, которые мы предлагаем
     </div>
     <div class="services-items">
-      <div class="services-item" *ngFor="let serviceItem of serviceItems">
+      <div class="services-item" *ngFor="let serviceItem of serviceItems; let i = index">
         <div>
           <div class="services-item-image">
             <img src="{{serviceItem.image}}" alt="Service">
@@ -104,7 +104,7 @@
           <div class="services-item-active-price">
             {{serviceItem.price}}
           </div>
-          <button class="button" (click)="popupShow()">
+          <button class="button" (click)="popupShow(serviceItem.id)">
             Подробнее
           </button>
         </div>
@@ -336,11 +336,16 @@
       <div class="popup-title">
         Заявка на услугу
       </div>
-      <input type="text" class="input service"
-             [ngStyle]="{'border-color': popupForm.get('service')?.invalid
-                 && (popupForm.get('service')?.dirty || popupForm.get('service')?.touched) ? 'red' : ''}"
-             formControlName="service"
-             placeholder="Копирайтинг">
+      <select class="input service">
+        <option value="{{item.title}}" *ngFor="let item of serviceItems">
+          {{item.title}}
+        </option>
+      </select>
+<!--      <input type="text" class="input service"-->
+<!--             [ngStyle]="{'border-color': popupForm.get('service')?.invalid-->
+<!--                 && (popupForm.get('service')?.dirty || popupForm.get('service')?.touched) ? 'red' : ''}"-->
+<!--             formControlName="service"-->
+<!--             placeholder="RXXXXX">-->
       <input type="text" class="input name"
              [ngStyle]="{'border-color': popupForm.get('name')?.invalid
                  && (popupForm.get('name')?.dirty || popupForm.get('name')?.touched) ? 'red' : ''}"

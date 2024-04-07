@@ -434,4 +434,13 @@
     color: red;
     //color: transparent;
   }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
 }

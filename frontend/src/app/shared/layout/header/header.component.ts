@@ -4,6 +4,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
 import {UserInfoType} from "../../../../types/user-info.type";
 import {DefaultResponseType} from "../../../../types/default-response.type";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,7 @@ import {DefaultResponseType} from "../../../../types/default-response.type";
 export class HeaderComponent implements OnInit {
 
   isLogged: boolean = false;
-  userInfo!: UserInfoType;
+  userInfo: string | null = null;
 
   constructor(private authService: AuthService,
               private _snackBar: MatSnackBar,
@@ -22,16 +23,25 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const tokens = this.authService.getTokens();
-    const authToken = tokens.accessToken
     this.authService.isLogged$.subscribe((isLoggedIn: boolean) => {
       this.isLogged = isLoggedIn;
     })
 
-    // this.authService.getUserInfo(authToken)
-    //   .subscribe({
-    //
-    //   })
+    if (this.isLogged) {
+      this.authService.getUserInfo()
+        .subscribe( {
+          next: (data:UserInfoType) => {
+            this.userInfo = (data as UserInfoType).name;
+          },
+          error: (errorResponse: HttpErrorResponse) => {
+            if (errorResponse.error && errorResponse.error.message) {
+              this._snackBar.open(errorResponse.error.message);
+            } else {
+              this._snackBar.open('Ошибка запроса');
+            }
+          }
+        })
+    }
   }
 
   logout(): void {
@@ -39,6 +49,7 @@ export class HeaderComponent implements OnInit {
       .subscribe({
         next: () => {
           this.doLogout();
+          this.userInfo = null;
         },
         error: () => {
           this.doLogout();
