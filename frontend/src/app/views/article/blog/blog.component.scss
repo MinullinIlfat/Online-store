@@ -15,12 +15,14 @@
 
     .blog-head {
       display: flex;
-      justify-content: space-between;
+      position: relative;
+      height: 40px;
       align-items: baseline;
       margin-bottom: 40px;
 
       .blog-head-checked {
         padding: 8px 10px 8px 20px;
+        margin-right: 40px;
         border-radius: 5px;
         display: flex;
         align-items: center;
@@ -41,7 +43,8 @@
 
       .blog-head-filter {
         box-sizing: border-box;
-        position: relative;
+        right: 0;
+        position: absolute;
         font-family: Montserrat,sans-serif;
         font-size: 16px;
         font-weight: 400;
