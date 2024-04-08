@@ -42,10 +42,12 @@ export class DetailComponent implements OnInit {
       this.articleService.getArticle(params['url'])
         .subscribe((data: ArticleType) => {
           this.article = data;
-          if (this.article.id) {
+          if (this.article.id && this.isLogged) {
             this.commentService.getAllCount(this.article.id)
               .subscribe((data) => {
-                this.allCount = data.allCount - 3;
+                if (data.allCount > 0) {
+                  this.allCount = data.allCount - 3;
+                }
                 this.commentService.getComments(this.article.id, this.allCount)
                   .subscribe((data) => {
                     this.comments = data.comments;

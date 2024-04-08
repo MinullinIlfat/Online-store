@@ -67,7 +67,6 @@ export class BlogComponent implements OnInit {
       })
       this.articleService.getArticles(this.activeParams)
         .subscribe(data => {
-          console.log(data)
           this.pages = [];
           for (let i = 1; i <= data.pages; i++) {
             this.pages.push(i)

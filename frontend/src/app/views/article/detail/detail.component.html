@@ -57,7 +57,7 @@
             <div class="auth" *ngIf="!isLogged">Чтобы оставлять комментарии, <a routerLink="/login">войдите</a> или <a
               routerLink="/signup">зарегистрируйтесь</a>.
             </div>
-            <div class="first" *ngIf="isLogged && allCount <= 0">
+            <div class="first" *ngIf="isLogged && allCount === 0">
               Будьте первым, кто оставит свой комментарий к статье!
             </div>
             <div *ngIf="isLogged">
