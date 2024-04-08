@@ -20,8 +20,10 @@ export class ArticleService {
     return this.http.get<ArticlesType[]>(environment.api + 'articles/top');
   }
 
-  getArticles():Observable<{count: number, pages: number, items: ArticlesType[]}> {
-    return this.http.get<{count: number, pages: number, items: ArticlesType[]}>(environment.api + 'articles');
+  getArticles(params: ActivateParamsType):Observable<{count: number, pages: number, items: ArticlesType[]}> {
+    return this.http.get<{count: number, pages: number, items: ArticlesType[]}>(environment.api + 'articles', {
+      params: params
+    });
   }
   getArticle(url: string):Observable<ArticleType> {
     return this.http.get<ArticleType>(environment.api + 'articles/' + url);

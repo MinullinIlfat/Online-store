@@ -4,9 +4,9 @@
       Блог
     </div>
     <div class="blog-head">
-      <div class="blog-head-checked" *ngFor="let activeParam of activeParams">
-        <span>{{activeParam}}</span>
-        <a (click)="removeAppliedFilter()">
+      <div class="blog-head-checked" *ngFor="let appliedFilter of appliedFilters">
+        <span>{{appliedFilter.name}}</span>
+        <a (click)="removeAppliedFilter(appliedFilter)">
           <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_8451_586)">
               <line x1="1.93553" y1="3.15002" x2="13.9563" y2="15.1708" stroke="#709FDC" stroke-linecap="round"/>
@@ -26,9 +26,10 @@
         </div>
         <div class="blog-head-filter-body">
           <label class="blog-head-filter-body-item"
-                 [class.active]="input.checked"
+                 [class.active]="this.activeParams.categories.includes(category.url)"
                  *ngFor="let category of categories">
             <input type="checkbox" #input
+                   [checked]="this.activeParams.categories.includes(category.url)"
                    (change)="updateFilterParams(category.url, input.checked)">
             <span>{{category.name}}</span>
             <span *ngIf="!input.checked">+</span>
@@ -41,16 +42,17 @@
       <article-card *ngFor="let article of articles" [article]="article"></article-card>
     </div>
     <div class="blog-pagination" *ngIf="pages.length > 1">
-      <div class="blog-pagination-arrow">
-        <img src="assets/images/page/previous-pagination-disabled.png" alt="Arrow">
-        <!--        <img src="assets/images/page/previous-pagination.png" alt="Arrow">-->
+      <div class="blog-pagination-arrow" (click)="openPrevPage()"
+      [class.disabled]="activeParams.page ? activeParams.page === 1 : true">
+        <img src="assets/images/page/previous-pagination.png" alt="Arrow">
       </div>
       <div class="blog-pagination-pages">
-        <a class="blog-pagination-page"
+        <a class="blog-pagination-page" (click)="openPage(page)"
+           [class.active]="this.activeParams.page ? this.activeParams.page === page : (page === 1)"
            *ngFor="let page of pages">{{page}}</a>
       </div>
-      <div class="blog-pagination-arrow">
-        <!--        <img src="assets/images/page/next-pagination-disabled.png" alt="Arrow">-->
+      <div class="blog-pagination-arrow" (click)="openNextPage()"
+           [class.disabled]="activeParams.page ? activeParams.page === pages.length : false">
         <img src="assets/images/page/next-pagination.png" alt="Arrow">
       </div>
     </div>

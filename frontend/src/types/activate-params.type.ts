@@ -1,7 +1,8 @@
 export type ActivateParamsType = {
-  count: number,
-  pages: number,
-  items: [
+  count?: number,
+  page?: number,
+  categories: string[],
+  items?: [
     id: string,
     title: string,
     description: string,

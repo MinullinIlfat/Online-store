@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../../../environments/environment";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ArticleService} from "../../../shared/services/article.service";
 import {ArticleType} from "../../../../types/article.type";
 import {ArticlesType} from "../../../../types/articles.type";
@@ -26,14 +26,14 @@ export class DetailComponent implements OnInit {
   commentsCount: number | null = null;
   allCount: number = 0;
   actionsList: ActionListType[] = [];
-  svgColorAction: string = 'none';
 
 
   constructor(private activatedRoute: ActivatedRoute,
               private articleService: ArticleService,
               private authService: AuthService,
               private commentService: CommentService,
-              private _snackBar: MatSnackBar) {
+              private _snackBar: MatSnackBar,
+              private router: Router) {
     this.isLogged = this.authService.getIsLoggedIn();
   }
 

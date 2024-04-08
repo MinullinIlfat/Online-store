@@ -89,17 +89,18 @@ export class MainComponent implements OnInit {
     },
   ]
 
-  popupForm = this.fb.group({
-    name: ['', [Validators.required]],
-    phone: ['', [Validators.required]],
-    service: ['', [Validators.required]],
-  });
-
   articles: ArticlesType[] = [];
   popup: boolean = false;
   successPopup: boolean = false;
   firstPopup: boolean = false;
   errorText: boolean = false;
+  title: string | null = null
+
+  popupForm = this.fb.group({
+    service: [''],
+    name: ['', [Validators.required]],
+    phone: ['', [Validators.required]],
+  });
 
   constructor(private articleService: ArticleService,
               private popupService: PopupService,
@@ -115,9 +116,10 @@ export class MainComponent implements OnInit {
       })
   }
 
-  popupShow(id: number) {
+  popupShow(title: string) {
     this.popup = true;
     this.firstPopup = true;
+    this.title = title;
   }
 
   popupHide() {
