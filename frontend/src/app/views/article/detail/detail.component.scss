@@ -215,6 +215,10 @@
                 .dislike {
                   margin-right: 15px;
                   margin-left: 15px;
+
+                  .svg-dislike {
+                    transform: rotate(180deg);
+                  }
                 }
               }
             }
