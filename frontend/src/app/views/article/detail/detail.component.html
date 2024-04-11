@@ -61,8 +61,8 @@
               Будьте первым, кто оставит свой комментарий к статье!
             </div>
             <div *ngIf="isLogged">
-              <textarea class="textarea" cols="100" rows="15"></textarea>
-              <button class="button" (click)="addComment('отлично', article.id)">
+              <textarea class="textarea" cols="100" rows="15" [ngModel]="commentValue" (ngModelChange)="addCommentValue($event)"></textarea>
+              <button class="button" (click)="addComment(commentValue, article.id)">
                 Опубликовать комментарий
               </button>
             </div>
@@ -158,4 +158,8 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="overlay">
+  <mat-spinner></mat-spinner>
 </div>

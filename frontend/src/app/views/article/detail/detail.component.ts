@@ -27,6 +27,8 @@ export class DetailComponent implements OnInit {
   allCount: number = 0;
   actionsList: ActionListType[] = [];
 
+  commentValue: string = '';
+
 
   constructor(private activatedRoute: ActivatedRoute,
               private articleService: ArticleService,
@@ -107,6 +109,10 @@ export class DetailComponent implements OnInit {
     }
   }
 
+  addCommentValue(newValue: string) {
+    this.commentValue = newValue;
+  }
+
   addComment(text: string, id: string) {
     this.commentService.addComment(text, id)
       .subscribe(data => {
@@ -114,6 +120,7 @@ export class DetailComponent implements OnInit {
         this.commentService.getComments(this.article.id, this.allCount)
           .subscribe((data) => {
             this.comments = data.comments;
+            this.commentValue = '';
           })
       })
   }

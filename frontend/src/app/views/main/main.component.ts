@@ -134,6 +134,7 @@ export class MainComponent implements OnInit {
       this.popupService.mainRequest(this.popupForm.value.name, this.popupForm.value.phone, 'order', this.popupForm.value.service)
         .subscribe({
           next: (data: DefaultResponseType) => {
+            this.popupForm.reset();
             this.firstPopup = false;
             this.successPopup = true;
             this._snackBar.open(data.message);

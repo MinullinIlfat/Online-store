@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {PopupService} from "../../services/popup.service";
 import {FormBuilder, Validators} from "@angular/forms";
 import {DefaultResponseType} from "../../../../types/default-response.type";
-import {LoginResponseType} from "../../../../types/login-response.type";
 import {HttpErrorResponse} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
@@ -44,6 +43,7 @@ export class FooterComponent implements OnInit {
       this.popupService.request(this.popupForm.value.name, this.popupForm.value.phone, 'consultation')
         .subscribe( {
           next: (data: DefaultResponseType) => {
+            this.popupForm.reset()
             this.firstPopup = false;
             this.successPopup = true;
             this._snackBar.open(data.message);
