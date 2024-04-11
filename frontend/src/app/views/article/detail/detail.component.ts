@@ -28,6 +28,7 @@ export class DetailComponent implements OnInit {
   actionsList: ActionListType[] = [];
 
   commentValue: string = '';
+  isShowed: boolean = false
 
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -94,17 +95,20 @@ export class DetailComponent implements OnInit {
   }
 
   moreComments() {
+    this.isShowed = true;
     if (this.allCount && this.allCount >= 10) {
       this.allCount -= 10;
       this.commentService.getComments(this.article.id, this.allCount)
         .subscribe((data) => {
           this.comments = data.comments;
+          this.isShowed = false;
         })
     } else {
       this.allCount = 0;
       this.commentService.getComments(this.article.id, this.allCount)
         .subscribe((data) => {
           this.comments = data.comments;
+          this.isShowed = false;
         })
     }
   }
