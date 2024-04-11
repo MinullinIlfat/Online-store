@@ -12,7 +12,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatMenuModule} from "@angular/material/menu";
 import {CarouselModule} from "ngx-owl-carousel-o";
 import {SharedModule} from "./shared/shared.module";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatMenuModule,
     SharedModule,
     CarouselModule,
+    FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule

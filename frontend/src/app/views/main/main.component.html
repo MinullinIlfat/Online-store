@@ -30,7 +30,7 @@
           <div class="main-title">
             Продвижение в Instagram для вашего бизнеса <span>-15%</span>!
           </div>
-          <button class="button" (click)="popupShow('null')">
+          <button class="button" (click)="popupShow('')">
             Подробнее
           </button>
         </div>
@@ -49,7 +49,7 @@
           <div class="main-text">
             Весь декабрь у нас действует акция на работу копирайтера.
           </div>
-          <button class="button" (click)="popupShow('null')">
+          <button class="button" (click)="popupShow('')">
             Подробнее
           </button>
         </div>
@@ -69,7 +69,7 @@
           <div class="main-text">
             Мы благодарим каждого, кто голосовал за нас!
           </div>
-          <button class="button" (click)="popupShow('null')">
+          <button class="button" (click)="popupShow('')">
             Подробнее
           </button>
         </div>
@@ -82,7 +82,7 @@
   </div>
 </section>
 
-<section class="services">
+<section class="services" id="services">
   <div class="container">
     <div class="services-title">
       Услуги, которые мы предлагаем
@@ -113,7 +113,7 @@
   </div>
 </section>
 
-<section class="advantages">
+<section class="advantages" id="advantages">
   <div class="container">
     <div class="advantages-image">
       <img src="assets/images/page/advantage.png" alt="Advantage">
@@ -174,7 +174,6 @@
   </div>
 </section>
 
-
 <section class="articles">
   <div class="container">
     <div class="articles-title">
@@ -194,7 +193,7 @@
   </div>
 </section>
 
-<section class="reviews">
+<section class="reviews" id="reviews">
   <div class="container">
     <div class="reviews-title">
       Отзывы о нашей работе
@@ -252,7 +251,7 @@
   </div>
 </section>
 
-<section class="connection">
+<section class="connection" id="connection">
   <div class="container">
     <div class="connection-map">
       <iframe
@@ -336,9 +335,9 @@
       <div class="popup-title">
         Заявка на услугу
       </div>
-      <select class="input service" formControlName="service">
-        <option *ngFor="let item of serviceItems" value="{{item.title}}">
-          {{item.title}}
+      <select class="input service" formControlName="service" [(ngModel)]="title">
+        <option *ngFor="let serviceItem of serviceItems" [value]="serviceItem.title">
+          {{serviceItem.title}}
         </option>
       </select>
       <input type="text" class="input name"

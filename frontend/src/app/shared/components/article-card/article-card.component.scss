@@ -65,6 +65,8 @@
       font-weight: 400;
       color: $base-blue-color;
       cursor: pointer;
+      text-decoration: none;
+      border-bottom: 1px solid $base-blue-color;
     }
   }
 }

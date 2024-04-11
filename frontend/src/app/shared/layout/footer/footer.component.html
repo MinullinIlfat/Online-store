@@ -2,25 +2,25 @@
   <div class="container">
     <div class="footer-content">
       <div class="footer-menu">
-        <div class="logo">
+        <a [routerLink]="'/'" class="logo">
           <img src="assets/images/Logotype.png" alt="Logo">
-        </div>
+        </a>
         <nav class="menu">
           <ul>
             <li>
-              <a>Услуги</a>
+              <a routerLink="/" fragment="services">Услуги</a>
             </li>
             <li>
-              <a>О нас</a>
+              <a routerLink="/" fragment="advantages">О нас</a>
             </li>
             <li>
-              <a>Статьи</a>
+              <a [routerLink]="'/blog'">Статьи</a>
             </li>
             <li>
-              <a>Отзывы</a>
+              <a routerLink="/" fragment="reviews">Отзывы</a>
             </li>
             <li>
-              <a>Контакты</a>
+              <a routerLink="/" fragment="connection">Контакты</a>
             </li>
           </ul>
         </nav>

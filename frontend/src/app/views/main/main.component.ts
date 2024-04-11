@@ -119,7 +119,11 @@ export class MainComponent implements OnInit {
   popupShow(title: string) {
     this.popup = true;
     this.firstPopup = true;
-    this.title = title;
+    if (title) {
+      this.title = title;
+    } else  {
+      this.title = this.serviceItems[0].title
+    }
   }
 
   popupHide() {

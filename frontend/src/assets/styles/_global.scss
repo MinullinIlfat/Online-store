@@ -67,6 +67,10 @@ html, body {
   font-weight: 400;
   margin-bottom: 5px;
 
+  &.service {
+    color: $base-blue-color;
+  }
+
   &::placeholder {
     color: #A8ABA7;
   }
@@ -178,4 +182,8 @@ html, body {
   &:last-child {
     margin-bottom: 60px;
   }
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #709FDC;
 }

@@ -28,7 +28,7 @@ export class DetailComponent implements OnInit {
   actionsList: ActionListType[] = [];
 
   commentValue: string = '';
-  isShowed: boolean = false
+  isShowed: boolean = false;
 
 
   constructor(private activatedRoute: ActivatedRoute,
