@@ -52,7 +52,7 @@ export class FooterComponent implements OnInit {
             if (errorResponse.error && errorResponse.error.message) {
               this._snackBar.open(errorResponse.error.message);
             } else {
-              this._snackBar.open('Ошибка запроса');
+              this._snackBar.open('произошла ошибка при отправке формы, попробуйте еще раз.');
             }
           }
         })

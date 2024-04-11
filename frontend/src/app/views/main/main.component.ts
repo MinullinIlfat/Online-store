@@ -147,7 +147,7 @@ export class MainComponent implements OnInit {
             if (errorResponse.error && errorResponse.error.message) {
               this._snackBar.open(errorResponse.error.message);
             } else {
-              this._snackBar.open('Ошибка запроса');
+              this._snackBar.open('Произошла ошибка при отправке формы, попробуйте еще раз.');
             }
           }
         })
