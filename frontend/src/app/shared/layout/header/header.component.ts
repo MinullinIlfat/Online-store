@@ -25,12 +25,16 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isLogged$.subscribe((isLoggedIn: boolean) => {
       this.isLogged = isLoggedIn;
+      this.showUserInfo();
     })
+    this.showUserInfo();
+  }
 
+  showUserInfo() {
     if (this.isLogged) {
       this.authService.getUserInfo()
-        .subscribe( {
-          next: (data:UserInfoType) => {
+        .subscribe({
+          next: (data: UserInfoType) => {
             this.userInfo = (data as UserInfoType).name;
           },
           error: (errorResponse: HttpErrorResponse) => {
@@ -57,7 +61,7 @@ export class HeaderComponent implements OnInit {
       })
   }
 
-  doLogout():void {
+  doLogout(): void {
     this.authService.removeTokens();
     this.authService.userId = null;
     this.isLogged = false;

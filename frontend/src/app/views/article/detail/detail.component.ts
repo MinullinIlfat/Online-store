@@ -131,39 +131,49 @@ export class DetailComponent implements OnInit {
 
   addAction(id: string, action: string) {
     this.commentService.addAction(id, action)
-      .subscribe(data => {
-        this._snackBar.open('Ваш голос учтен');
-        this.commentService.getActions(this.article.id)
-          .subscribe({
-            next: (data: ActionListType[] | DefaultResponseType) => {
-              this.actionsList = data as ActionListType[];
-              this.comments.forEach(item => {
-                this.actionsList.find(actionItem => {
-                  if (item.id === actionItem.comment && actionItem.action) {
-                    if (actionItem.action === 'like') {
-                      item.like = true;
-                      item.dislike = false;
-                    } else if (actionItem.action === 'dislike') {
-                      item.like = false;
-                      item.dislike = true;
+      .subscribe({
+        next: data => {
+          if (data && action === 'violate') {
+            this._snackBar.open('Жалоба отправлена');
+          } else if (data && action === 'like' || data && action === 'dislike') {
+            this._snackBar.open('Ваш голос учтен');
+          }
+          this.commentService.getActions(this.article.id)
+            .subscribe({
+              next: (data: ActionListType[] | DefaultResponseType) => {
+                this.actionsList = data as ActionListType[];
+                this.comments.forEach(item => {
+                  this.actionsList.find(actionItem => {
+                    if (item.id === actionItem.comment && actionItem.action) {
+                      if (actionItem.action === 'like') {
+                        item.like = true;
+                        item.dislike = false;
+                      } else if (actionItem.action === 'dislike') {
+                        item.like = false;
+                        item.dislike = true;
+                      }
                     }
-                  }
+                  })
                 })
-              })
-            },
-            error: (errorResponse: HttpErrorResponse) => {
-              if (errorResponse.error && errorResponse.error.message) {
-                this._snackBar.open(errorResponse.error.message);
-              } else {
-                this._snackBar.open('Ошибка запроса');
+              },
+              error: (errorResponse: HttpErrorResponse) => {
+                if (errorResponse.error && errorResponse.error.message) {
+                  this._snackBar.open(errorResponse.error.message);
+                } else {
+                  this._snackBar.open('Ошибка запроса');
+                }
               }
-            }
-
-          })
-        this.commentService.getComments(this.article.id, this.allCount)
-          .subscribe((data) => {
-            this.comments = data.comments;
-          })
+            })
+          this.commentService.getComments(this.article.id, this.allCount)
+            .subscribe((data) => {
+              this.comments = data.comments;
+            })
+        },
+        error: (errorResponse: HttpErrorResponse) => {
+          if (errorResponse.error && errorResponse.error.message) {
+            this._snackBar.open('Жалоба уже отправлена');
+          }
+        }
       })
   }
 }
