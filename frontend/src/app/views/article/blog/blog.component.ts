@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {ArticleService} from "../../../shared/services/article.service";
 import {ArticlesType} from "../../../../types/articles.type";
 import {CategoryType} from "../../../../types/category.type";
@@ -11,6 +11,8 @@ import {AppliedFilterType} from "../../../../types/applied-filter.type";
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss']
 })
+@HostListener('document:click', ['$event'])
+
 export class BlogComponent implements OnInit {
 
   articles: ArticlesType[] = [];
@@ -38,11 +40,6 @@ export class BlogComponent implements OnInit {
       this.appliedFilters = [];
       this.activeParams.categories.forEach(url => {
         let foundCategory = this.activeParams.categories.find(item => item === url);
-        // this.categories.forEach(item => {
-        //   if (item.url === foundCategory) {
-        //     foundCategory = item.name;
-        //   }
-        // })
         if (foundCategory === 'smm') {
           foundCategory = 'SMM'
         }
@@ -110,6 +107,13 @@ export class BlogComponent implements OnInit {
       queryParams: this.activeParams
     });
   }
+
+  onDocumentClick(event: MouseEvent): void {
+    const filterElement: Element | null = document.querySelector('.blog-head-filter');
+    if (filterElement && !filterElement.contains(event.target as Node)) {
+      this.open = false;
+    }
+   }
 
   openPage(page: number) {
     this.activeParams.page = page;
